@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 300;
+    }
+    
+    .header .subtitle {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 5px;
+    }
+    
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .toggle-label {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .toggle-switch {
+      position: relative;
+      width: 50px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .toggle-switch.active {
+      background: #4CAF50;
+    }
+    
+    .toggle-switch .slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .toggle-switch.active .slider {
+      transform: translateX(26px);
+    }
+    
+    .status {
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    
+    .status.enabled {
+      background: rgba(76, 175, 80, 0.2);
+      color: #4CAF50;
+    }
+    
+    .status.disabled {
+      background: rgba(244, 67, 54, 0.2);
+      color: #f44336;
+    }
+    
+    .info {
+      margin-top: 15px;
+      font-size: 11px;
+      text-align: center;
+      opacity: 0.7;
+      line-height: 1.4;
+    }
+    
+    .icon {
+      font-size: 18px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🚀 AutoSkip</h1>
+    <div class="subtitle">YouTube Ad Skipper</div>
+  </div>
+  
+  <div class="toggle-container">
+    <div class="toggle-label">
+      <span class="icon">⚡</span>
+      Auto-Skip
+    </div>
+    <div class="toggle-switch" id="toggleSwitch">
+      <div class="slider"></div>
+    </div>
+  </div>
+  
+  <div class="status" id="status">
+    Chargement...
+  </div>
+  
+  <div class="info">
+    Cette extension clique automatiquement sur le bouton "Skip" des publicités YouTube pour vous faire gagner du temps.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

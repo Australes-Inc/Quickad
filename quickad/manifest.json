@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "AutoSkip - YouTube Ad Skipper",
-  "version": "1.0",
-  "description": "Clique automatiquement sur le bouton Skip des publicités YouTube",
+  "name": "Quickad",
+  "version": "1.0.0",
+  "description": "Accélerer la lecture des publicités YouTube pour les sauter plus rapidement.",
   "permissions": [
     "activeTab",
     "storage"
@@ -16,6 +16,6 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "AutoSkip YouTube Ads"
+    "default_title": "Quickad"
   }
 }

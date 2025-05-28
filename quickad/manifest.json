@@ -16,6 +16,18 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Quickad"
+    "default_title": "Quickad",
+    "default_icon": {
+      "16": "Quickad.png",
+      "32": "Quickad.png",
+      "48": "Quickad.png",
+      "128": "Quickad.png"
+    }
+  },
+  "icons": {
+    "16": "Quickad.png",
+    "32": "Quickad.png",
+    "48": "Quickad.png",
+    "128": "Quickad.png"
   }
 }

@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (enabled) {
       toggleSwitch.classList.add('active');
       statusDiv.className = 'status enabled';
-      statusDiv.textContent = '✅ AutoSkip activé';
+      statusDiv.textContent = 'Quickad activé';
     } else {
       toggleSwitch.classList.remove('active');
       statusDiv.className = 'status disabled';
-      statusDiv.textContent = '❌ AutoSkip désactivé';
+      statusDiv.textContent = 'Quickad désactivé';
     }
   }
   
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!currentTab || !currentTab.url || !currentTab.url.includes('youtube.com')) {
       statusDiv.className = 'status disabled';
-      statusDiv.textContent = '⚠️ Disponible uniquement sur YouTube';
+      statusDiv.textContent = 'Disponible uniquement sur YouTube';
       toggleSwitch.style.pointerEvents = 'none';
       toggleSwitch.style.opacity = '0.5';
       return;
@@ -39,11 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
       clearTimeout(timeoutId);
       
       if (chrome.runtime.lastError) {
-        console.warn('Erreur:', chrome.runtime.lastError.message);
         setTimeout(() => {
           chrome.tabs.sendMessage(currentTab.id, {action: 'getStatus'}, function(response) {
             if (chrome.runtime.lastError) {
-              console.warn('Erreur après retry:', chrome.runtime.lastError.message);
               updateUI(true); 
             } else if (response) {
               updateUI(response.enabled);
@@ -55,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (response) {
         updateUI(response.enabled);
       } else {
-        console.warn('Pas de réponse du content script');
         updateUI(true); 
       }
     });
@@ -73,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
       
       chrome.tabs.sendMessage(currentTab.id, {action: 'toggle'}, function(response) {
         if (chrome.runtime.lastError) {
-          console.warn('Erreur toggle:', chrome.runtime.lastError.message);
         } else if (response) {
           updateUI(response.enabled);
         }

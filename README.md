@@ -3,6 +3,12 @@ Quickad ⚡
 
 ![Static Badge](https://img.shields.io/badge/Version-1.0.0-orange)
 
+---
+
+**⚠️ CET OUTIL N'EST PAS ENCORE FONCTIONNEL ⚠️**
+
+---
+
 ## Comment l'utiliser sur sa machine
 
 > Quickad n'est pas encore disponible sur le Web Store
